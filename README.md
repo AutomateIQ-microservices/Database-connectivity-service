@@ -1,2 +1,2 @@
-#Database Schema
+# Database Schema
 ![Database Schema](DBSchema.png)
