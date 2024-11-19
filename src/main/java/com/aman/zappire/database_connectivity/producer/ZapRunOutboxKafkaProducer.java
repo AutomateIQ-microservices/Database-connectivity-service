@@ -37,7 +37,7 @@ public class ZapRunOutboxKafkaProducer {
     			kafkaProducer.sendToKafka(message);
     		});
     		
-    		zapRunOutRepo.deleteAll(pendingZapruns);
+    		//zapRunOutRepo.deleteAll(pendingZapruns);
     	}
     }
 }

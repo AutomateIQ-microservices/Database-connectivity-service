@@ -1,9 +1,12 @@
 package com.aman.zappire.database_connectivity.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity(name="Users")
 public class User {
@@ -14,6 +17,9 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	
+	@OneToMany(mappedBy="users")
+	private List<Zap>zaps;
 	
 	public User() {
 		super();

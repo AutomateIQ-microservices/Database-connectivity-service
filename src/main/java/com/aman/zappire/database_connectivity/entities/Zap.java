@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -21,10 +23,15 @@ public class Zap {
 	//private String triggerId;
 	
 	@OneToOne
+	@JoinColumn(name="trigger_id",nullable = false, unique = true)
 	private Trigger trig;
 
 	@OneToMany(mappedBy = "zapId")
 	private List<Action> actions;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User users;
 	
 	public Zap() {
 		super();
